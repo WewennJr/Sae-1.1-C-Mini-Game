@@ -1,25 +1,25 @@
 # 🎮 Two-Player Strategy Game (C)
 
-Petit jeu de stratégie au tour par tour développé en C dans le cadre d’une SAÉ.
+Small turn-based strategy game developed in C as part of a SAÉ project.
 
 ---
 
 ## 🧠 Concept
 
-Le jeu se joue à **deux joueurs** sur un plateau **6×6**.
+The game is played by **two players** on a **6×6 board**.
 
-Chaque joueur contrôle **6 pièces de tailles différentes**.  
-L’objectif est simple :
+Each player controls **6 pieces of different sizes**.  
+The objective is simple:
 
-👉 Amener **une pièce jusqu’au côté opposé du plateau** pour gagner.
+👉 Move **one piece to the opposite side of the board** to win.
 
-Les joueurs jouent chacun leur tour en déplaçant leurs pièces stratégiquement.
+Players take turns moving their pieces strategically.
 
 ---
 
-## ⚙️ Compilation et lancement
+## ⚙️ Compilation and launch
 
-Pour compiler et exécuter le jeu :
+To compile and run the game:
 
 ```bash
 gcc -Wall -c board.c -o board.o
@@ -29,91 +29,91 @@ gcc -Wall board.o -o game
 
 ---
 
-## 🎲 Déroulement du jeu
+## 🎲 Game flow
 
-### 1. Mise en place
+### 1. Setup
 
-Au début de la partie, chaque joueur place ses pièces alternativement :
+At the beginning of the game, each player places their pieces alternately:
 
-- 2 pièces de chaque taille
-- Placement par colonne (1 à 6)
-- Le jeu choisit automatiquement la ligne côté joueur
+- 2 pieces of each size
+- Placement by column (1 to 6)
+- The game automatically chooses the row on the player’s side
 
-🟢 Taille 1 → déplacement de 1 case  
-🟡 Taille 2 → déplacement de 2 cases  
-🔴 Taille 3 → déplacement de 3 cases  
-
----
-
-### 2. Tour de jeu
-
-À chaque tour, un joueur :
-
-1. Sélectionne une pièce (ligne + colonne)
-2. Choisit une direction possible :
-   - ↑ Nord  
-   - ↓ Sud  
-   - → Est  
-   - ← Ouest  
-3. Déplace la pièce selon sa taille (nombre de cases max)
-
-Commandes spéciales :
-- `A` → annuler le mouvement
-- `R` → annuler le dernier déplacement
+🟢 Size 1 → movement of 1 tile  
+🟡 Size 2 → movement of 2 tiles  
+🔴 Size 3 → movement of 3 tiles  
 
 ---
 
-### 3. Déplacement et règles
+### 2. Turn
 
-- Une pièce ne peut se déplacer que si le mouvement est valide
-- Le jeu vérifie automatiquement les collisions et limites
-- Les erreurs de déplacement sont refusées
+On each turn, a player:
 
----
+1. Selects a piece (row + column)
+2. Chooses a possible direction:
+   - ↑ North  
+   - ↓ South  
+   - → East  
+   - ← West  
+3. Moves the piece according to its size (maximum number of tiles)
 
-### 4. Swap (échange spécial)
-
-Si une pièce termine son mouvement sur une autre pièce :
-
-- Le joueur peut choisir d’effectuer un **swap**
-- Confirmation :
-  - `O` → oui
-  - `N` → non
-- Puis sélection de la pièce à échanger
+Special commands:
+- `A` → cancel the move
+- `R` → undo the last step
 
 ---
 
-### 5. Fin de partie
+### 3. Movement and rules
 
-Le jeu se termine lorsqu’un joueur atteint le côté opposé du plateau avec une pièce.
-
-🎉 Un message de victoire est affiché.
-
----
-
-## 🛠️ Structure du projet
-
-- `main.c` : boucle principale du jeu
-- `board.c` : logique du plateau et des règles
-- `board.h` : définitions et structures
-- `game` : exécutable généré
+- A piece can only move if the move is valid
+- The game automatically checks collisions and boundaries
+- Invalid moves are rejected
 
 ---
 
-## 💡 Conseils
+### 4. Swap (special exchange)
 
-- Anticiper les mouvements adverses
-- Bien gérer les pièces de grande taille
-- Utiliser `A` et `R` en cas d’erreur
-- Contrôler les positions clés du plateau
+If a piece ends its move on another piece:
+
+- The player can choose to perform a **swap**
+- Confirmation:
+  - `O` → yes
+  - `N` → no
+- Then select the piece to swap with
 
 ---
 
-## 🚀 Objectif du projet
+### 5. End of the game
 
-Ce projet a été réalisé pour pratiquer :
+The game ends when a player reaches the opposite side of the board with a piece.
 
-- la programmation en C
-- la gestion de structures et de logique de jeu
-- la manipulation de plateau
-- la compilation avec GCC
+🎉 A victory message is displayed.
+
+---
+
+## 🛠️ Project structure
+
+- `main.c` : main game loop
+- `board.c` : board logic and game rules
+- `board.h` : definitions and structures
+- `game` : compiled executable
+
+---
+
+## 💡 Tips
+
+- Anticipate opponent moves
+- Manage large pieces carefully
+- Use `A` and `R` if you make mistakes
+- Control key positions on the board
+
+---
+
+## 🚀 Project goal
+
+This project was made to practice:
+
+- C programming
+- Data structures and game logic
+- Board management
+- GCC compilation
