@@ -117,4 +117,3 @@ Ce projet a été réalisé pour pratiquer :
 - la gestion de structures et de logique de jeu
 - la manipulation de plateau
 - la compilation avec GCC
-```
